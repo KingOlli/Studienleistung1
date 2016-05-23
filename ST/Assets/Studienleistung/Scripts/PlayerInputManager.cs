@@ -9,26 +9,26 @@ public class PlayerInputManager : MonoBehaviour {
 	public float rotationBoost = 50.0f;
 	private string m_MovementAxis = "Move";
 	private string m_RotationAxis = "Rotate";
-	private float m_MovementInput;
+	private float m_MovementInput = 0.0f;
 	private float m_RoationInput;
 
 
 
 	//Tank-Tutorial
 
-	// Use this for initialization
-	void Start () {
-		Init ();
+
+	public void Init() {
+		m_rigidbody = gameObject.GetComponent<Rigidbody> ();
 	}
 
-	void Init() {
-		m_rigidbody = gameObject.GetComponent<Rigidbody> ();
+	public void setPosition (Transform spawnPosition) {
+		m_rigidbody.position = spawnPosition.position;
 	}
 
 	private void Move() {
 		m_MovementInput = Input.GetAxis (m_MovementAxis);
 
-		Vector3 movement = transform.forward * speedBoost * Time.deltaTime;
+		Vector3 movement = transform.forward * m_MovementInput * speedBoost * Time.deltaTime;
 		m_rigidbody.MovePosition (m_rigidbody.position + movement);
 
 	}
@@ -41,6 +41,7 @@ public class PlayerInputManager : MonoBehaviour {
 		m_rigidbody.MoveRotation (m_rigidbody.rotation * rotation);
 	
 	}
+		
 
 	// Update is called once per frame
 	void FixedUpdate () {
