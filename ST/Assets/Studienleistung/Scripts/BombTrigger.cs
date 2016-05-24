@@ -18,7 +18,8 @@ public class BombTrigger : MonoBehaviour {
 	
 	}
 
-	void enterTrigger(Collider collider) {
+	void OnTriggerEnter(Collider collider) {
+		Debug.Log ("BOMBE");
 		if (collider.gameObject.name == "Player") {
 
 			EnableBomb (false);

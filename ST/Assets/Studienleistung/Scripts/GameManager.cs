@@ -38,11 +38,12 @@ public class GameManager : MonoBehaviour {
 
 	void activateBombs() {
 		for ( int i=0; i< bombs.Length; i ++) {
-			 bombs[i].EnableBomb (false);
+			 bombs[i].EnableBomb (true);
 		}
 	}
 
 	void gameFinished() {
+		Debug.Log ("FINAL");
 		activateBombs();
 		closeDoors ();
 		m_PlayerManager.respawnPlayer();
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour {
 
 
 	void findGameObjects() {
-		GameObject[] objs = GameObject.FindGameObjectsWithTag("Bomb");
+		GameObject[] objs = GameObject.FindGameObjectsWithTag("Bombe");
 		bombs = new BombTrigger [objs.Length];
 		for (int i = 0; i < objs.Length; i++) {
 			bombs [i] = objs [i].GetComponent<BombTrigger> ();

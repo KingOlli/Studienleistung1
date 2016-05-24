@@ -17,15 +17,16 @@ public class TriggerConsole : MonoBehaviour {
 		door = d_trigger.GetComponent<Door> ();
 	}
 
-	void enterTrigger (Collider collider) {
+	void OnTriggerEnter (Collider collider) {
 		if (collider.gameObject.name == "Player") {
 			sound.Play ();
 		}
 	}
 		
-	void doorTrigger (Collider collider) {
+	void OnTriggerStay (Collider collider) {
 		if (collider.gameObject.name == "Player") {
 			if (Input.GetKey(KeyCode.Space)) {
+				Debug.Log ("OPEN");
 				door.isOpen = true;
 		}
 	}

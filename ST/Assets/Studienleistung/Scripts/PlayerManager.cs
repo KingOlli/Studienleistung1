@@ -40,6 +40,7 @@ public class PlayerManager : MonoBehaviour {
 
 	public void reduceHealthPoints(int value) {
 		m_healthPoint -= value;
+		Debug.Log (m_healthPoint);
 		onHealthChanged (m_healthPoint);
 	}
 

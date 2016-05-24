@@ -7,9 +7,7 @@ public class TriggerFinal : MonoBehaviour {
 	public static event TriggerEvent onTargetReached;
 
 	// Use this for initialization
-	void Start () {
-	
-	}
+
 
 	void OnTriggerEnter(Collider collider) {
 		if (collider.gameObject.name == "Player") {
@@ -18,7 +16,5 @@ public class TriggerFinal : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

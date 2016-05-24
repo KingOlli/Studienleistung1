@@ -4,7 +4,7 @@ using System.Collections;
 public class Door : MonoBehaviour {
 
 	public bool isOpen = false;
-	public float unlockDepth = 0.0f;
+	public float openDepth = 0.0f;
 	public float closeDepth = 2.0f;
 	public float closeSpeed = 3f;
 
@@ -14,12 +14,12 @@ public class Door : MonoBehaviour {
 	//}
 	
 	// Update is called once per frame
-	void Update () {
+	//void Update () {
 
-	}
+	//}
 
 	void FixedUpdate() {
-		if (isOpen == false) {
+		if (isOpen == true) {
 				openDoor ();
 			} else {
 				closeDoor();
@@ -27,12 +27,16 @@ public class Door : MonoBehaviour {
 	}
 
 	void openDoor() {
-
+		if (transform.position.y >= openDepth) {
+			transform.Translate (Vector3.down * closeSpeed * Time.deltaTime);
+		}
 	}
 
 
 	void closeDoor() {
-
+		if (transform.position.y <= openDepth) {
+			transform.Translate (Vector3.up * closeSpeed * Time.deltaTime);
+		}
 	}
 	
 	
