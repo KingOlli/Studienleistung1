@@ -30,8 +30,8 @@ public class UI : MonoBehaviour {
 		mainScreen.SetActive (false);
 
 		PlayerManager.onHealthChanged += updatePoints;
-		TriggerConsole.onTriggerEntered += showButton;
-		TriggerConsole.onTriggerLeft += hideButton;
+		TriggerConsole.OnTriggerEntered += showButton;
+		TriggerConsole.OnTriggerLeft += hideButton;
 		TriggerFinal.onTargetReached += gameFinished;
 
 		startTime = Time.time;
@@ -40,6 +40,7 @@ public class UI : MonoBehaviour {
 	void showButton (GameObject door) {
 		button.SetActive (true);
 		activeDoor = door;
+		Debug.Log (activeDoor + "-----SHOW");
 	
 	}
 
@@ -65,7 +66,8 @@ public class UI : MonoBehaviour {
 		startTime = Time.time;
 	}
 
-	public void onDoorButtonClicked() {
+	public void OnDoorButtonClicked() {
+		Debug.Log ("CLICK");
 		if (activeDoor != null) {
 			activeDoor.GetComponent<Door> ().isOpen = true;
 		}

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	private Door[] doors;
 	private PlayerManager m_PlayerManager;
 	public static int m_StartHealth = 100;
+	private UI m_UI;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour {
 		TriggerFinal.onTargetReached += gameFinished;
 		m_PlayerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
 		m_PlayerManager.setStartHealth();
+
+		m_UI = GameObject.Find("Canvas").GetComponent<UI>();
 
 		findGameObjects ();
 		activateBombs ();
@@ -43,7 +46,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void gameFinished() {
-		Debug.Log ("FINAL");
 		activateBombs();
 		closeDoors ();
 		m_PlayerManager.respawnPlayer();
@@ -62,6 +64,8 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < objs.Length; i++) {
 			doors [i] = objs [i].GetComponent<Door> ();
 		}
+
+		Debug.Log (message + "Found " + doors.Length + " doors!");
 	}
 
 	void playerHealthChanged (int health) {
