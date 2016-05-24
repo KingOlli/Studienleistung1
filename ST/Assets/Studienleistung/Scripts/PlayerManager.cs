@@ -22,18 +22,18 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	//void Start () {
-	//	Init ();
-	//}
+	void Start () {
+		Init ();
+	}
 
-	public void Init() {
+	void Init() {
 		m_PlayerInputManager = gameObject.GetComponent<PlayerInputManager> ();
 		m_PlayerInputManager.Init ();
 		m_PlayerInputManager.setPosition (spawnPosition);
 		onHealthChanged(m_healthPoint);
 	}
 
-	public void setStartHealthPoints() {
+	public void setStartHealth() {
 		m_healthPoint = m_StartHealth;
 		onHealthChanged (m_healthPoint);
 	}

@@ -16,9 +16,13 @@ public class PlayerInputManager : MonoBehaviour {
 
 	//Tank-Tutorial
 
+	void Start () {
+
+	}
+
 
 	public void Init() {
-		m_rigidbody = gameObject.GetComponent<Rigidbody> ();
+		m_rigidbody = GetComponent<Rigidbody> ();
 	}
 
 	public void setPosition (Transform spawnPosition) {

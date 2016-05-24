@@ -18,12 +18,12 @@ public class BombTrigger : MonoBehaviour {
 	
 	}
 
-	void enterTrigger() {
+	void enterTrigger(Collider collider) {
 		if (collider.gameObject.name == "Player") {
 
 			EnableBomb (false);
 			collider.gameObject.GetComponent<PlayerManager> ().reduceHealthPoints (10);
-			sound.Play ();
+			m_Sound.Play ();
 		}
 	}
 

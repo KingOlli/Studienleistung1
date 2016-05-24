@@ -16,17 +16,18 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	void Init () {
 		PlayerManager.onHealthChanged += playerHealthChanged;
-		TriggerFinish.OnTargetReached += gameFinished;
+		TriggerFinal.onTargetReached += gameFinished;
 		m_PlayerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
-		m_PlayerManager.SetStarttHealth ();
+		m_PlayerManager.setStartHealth();
 
-		activateBombs ();
 		findGameObjects ();
+		activateBombs ();
+
 	}
 
 	void closeDoors() {
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour {
 		activateBombs();
 		closeDoors ();
 		m_PlayerManager.respawnPlayer();
-		m_PlayerManager.SetStarttHealth ();
+		m_PlayerManager.setStartHealth ();
 	}
 
 
