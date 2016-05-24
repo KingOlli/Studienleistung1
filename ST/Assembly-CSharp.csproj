@@ -52,6 +52,7 @@
      <Compile Include="Assets\Studienleistung\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Studienleistung\Scripts\TriggerConsole.cs" />
      <Compile Include="Assets\Studienleistung\Scripts\TriggerFinal.cs" />
+     <Compile Include="Assets\Studienleistung\Scripts\UI.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

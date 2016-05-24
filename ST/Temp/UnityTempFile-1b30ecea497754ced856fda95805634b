@@ -84,5 +84,6 @@
 'Assets/Studienleistung/Scripts/PlayerManager.cs'
 'Assets/Studienleistung/Scripts/TriggerConsole.cs'
 'Assets/Studienleistung/Scripts/TriggerFinal.cs'
+'Assets/Studienleistung/Scripts/UI.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'

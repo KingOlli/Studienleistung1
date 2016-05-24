@@ -4,8 +4,11 @@ using System.Collections;
 public class TriggerConsole : MonoBehaviour {
 
 	public AudioSource sound;
-	public GameObject d_trigger;
 	public Door door;
+
+	public delegate void ConsoleEvent(GameObject console);
+	public static event ConsoleEvent onTriggerEntered;
+	public static event ConsoleEvent onTriggerLeft;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +17,6 @@ public class TriggerConsole : MonoBehaviour {
 
 	void Init() {
 		sound = gameObject.GetComponent<AudioSource> ();
-		door = d_trigger.GetComponent<Door> ();
 	}
 
 	void OnTriggerEnter (Collider collider) {
