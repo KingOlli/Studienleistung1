@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void activateBombs() {
-		for ( int i=0; i< bombs.Length; i ++) {
+		for ( int i=0; i< bombs.Length-1; i ++) {
 			 bombs[i].EnableBomb (true);
 		}
 	}
@@ -64,8 +64,7 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < objs.Length; i++) {
 			doors [i] = objs [i].GetComponent<Door> ();
 		}
-
-		Debug.Log (message + "Found " + doors.Length + " doors!");
+			
 	}
 
 	void playerHealthChanged (int health) {
